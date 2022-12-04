@@ -1,0 +1,10 @@
+name: "FHIR API endpoint for FHIR Patient Rec“
+
+jobs:
+  run-updater:
+    runs-on: ubuntu-latest
+    steps:
+    - name: REST API with curl
+      run: |
+        curl -X GET "http://hapi.fhir.org/baseR4/Patient?phonetic=tue"
+        
