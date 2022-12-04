@@ -34,7 +34,7 @@ jobs:
 
       - id: jupyter 
         name: Jupyter Notebook Execution
-        run: jupyter execute canada_covid_live_data.ipynb
+        run: jupyter execute FHIR_healthcare_data.ipynb
         shell: bash 
 
  # Add new files in folder, commit along with other modified files, push
