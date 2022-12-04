@@ -1,11 +1,31 @@
-name: "FHIR API endpoint for FHIR Patient Rec“
+# This is a basic workflow to help you get started with Actions
 
-on: [push]
+name: FHIR API Endpoint
 
+# Controls when the workflow will run
+on:
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+  schedule:
+    #- cron: '0 */24 * * *'
+    - cron: '0 0 1 1 *'
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  run-github-actions:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: REST API with curl
-      run: curl -X GET "http://hapi.fhir.org/baseR4/Patient?phonetic=tue"
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - id: fhir
+        name: Jupyter Notebook Execution
+        run: |
+          pwd
+          ls
+        shell: bash 
+
+ # Add new files in folder, commit along with other modified files, push
 
