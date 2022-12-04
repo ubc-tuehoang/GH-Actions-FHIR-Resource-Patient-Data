@@ -25,6 +25,7 @@ jobs:
         run: |
           pwd
           ls
+          curl http://hapi.fhir.org/baseR4/Patient?phonetic=tue
         shell: bash 
 
  # Add new files in folder, commit along with other modified files, push
